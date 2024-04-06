@@ -5,7 +5,6 @@ class LoginController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Auth');
         $this->load->library('session');
         $this->load->helper('url');
     }
@@ -17,6 +16,8 @@ class LoginController extends CI_Controller {
 
     public function login_submit()
     {
+        $this->load->model('Auth');
+        
         $username = $this->input->Post('username');
         $password = $this->input->Post('password');
         $login = $this->Auth->login($username, $password);
