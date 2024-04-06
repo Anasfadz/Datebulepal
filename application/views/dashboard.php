@@ -69,7 +69,13 @@
             }
         }
 
-        if($user_setting["last_period"])
+        $dateString1 =$user_setting["last_period"];
+        $dateString2 = "2020-01-01";
+
+        $date1 = new DateTime($dateString1);
+        $date2 = new DateTime($dateString2);
+
+        if($date1 > $date2)
         {
             $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
             $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
