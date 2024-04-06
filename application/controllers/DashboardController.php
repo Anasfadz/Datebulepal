@@ -31,7 +31,7 @@ class DashboardController extends CI_Controller {
         $data = array('user' => $user, 'user_setting' => $user_setting, 'date' => $date);
 
 
-		$this->load->view('dashboard_old', $data);
+		$this->load->view('dashboard', $data);
 	}
 
     public function user_setting()

@@ -69,9 +69,12 @@
             }
         }
 
-        $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
-        $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
-        echo "<h1>Your next period will hit on " . date_format($date, "d/m/Y") . "</h1>";
+        if($user_setting["day_last"])
+        {
+            $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
+            $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
+            echo "<h1>Your next period will hit on " . date_format($date, "d/m/Y") . "</h1>";
+        }
         ?>
     </div>
 
