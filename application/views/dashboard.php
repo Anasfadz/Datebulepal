@@ -69,7 +69,7 @@
             }
         }
 
-        if($user_setting["day_last"])
+        if($user_setting["last_period"])
         {
             $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
             $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
@@ -97,9 +97,9 @@
                     <option value="">Select Days</option>
                 <?php } ?>
                 <option value="1">1 day</option>
-                <?php for($i=2; $i <= 10 && $i != $user_setting["day_last"]; $i++) {?>
+                <?php for($i=2; $i <= 10; $i++) { if($i != $user_setting["day_last"]){?>
                     <option value="<?php echo $i ?>"><?php echo $i ?> days</option>
-                <?php } ?>
+                <?php }} ?>
             </select>
             <br>
             <label for="day_length">Average Days to Your Next Period (After Your Period Ends)</label>
@@ -109,9 +109,9 @@
                 <?php } else { ?>
                     <option value="">Select Days</option>
                 <?php } ?>
-                <?php for($i=22; $i <= 44; $i++) {?>
+                <?php for($i=22; $i <= 44; $i++) if($i != $user_setting["day_length"]){{?>
                     <option value="<?php echo $i ?>"><?php echo $i ?> days</option>
-                <?php } ?>
+                <?php }} ?>
             </select>
             <br>
             <input type="submit" value="Submit">
