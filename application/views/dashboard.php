@@ -77,7 +77,7 @@
 
         if($date1 > $date2)
         {
-            $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
+            $day_add = $user_setting["day_length"] - 1 . " days";
             $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
             echo "<h1>Your next period will hit on " . date_format($date, "d/m/Y") . "</h1>";
         }
@@ -93,7 +93,7 @@
         <form action="user_setting" method="post">
             <input type="text" id="user_id" name="user_id" value= <?php echo $user["id"] ?> hidden>
             <label for="datepicker">First Day of Your Last Period:</label>
-            <input type="text" id="datepicker" value="<?php if($date1 > $date2) {echo date_format(date_create($user_setting["last_period"]), "d/m/Y"); }?>" name="last_period">
+            <input type="text" id="datepicker" <?php if($date1 > $date2){echo "placeholder= 'your last setting is ".date_format(date_create($user_setting["last_period"]), "d/m/Y") ."'"; }?> name="last_period">
             <br>
             <label for="day_last">Average Day of Your Period</label>
             <select id="day_last" name="day_last">
