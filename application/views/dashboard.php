@@ -65,13 +65,13 @@
         if($diff2 <= -1) {
             $diff3 = $diff2 * -1;
             if($diff3 <= $user_setting["day_last"]) {
-                echo "<h1>Hey, looks like this is your day ".$diff3." of your period</h1>";
-            } else {
-                $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
-                $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
-                echo "<h1>Your next period will hit on " . date_format($date, "d/m/Y") . "</h1>";
+                echo "<h1>Hey, looks like this is your day ".($diff3 + 1)." of your period</h1>";
             }
         }
+
+        $day_add = $user_setting["day_last"] + $user_setting["day_length"] . " days";
+        $date = date_add(date_create($user_setting["last_period"]), date_interval_create_from_date_string($day_add));
+        echo "<h1>Your next period will hit on " . date_format($date, "d/m/Y") . "</h1>";
         ?>
     </div>
 
