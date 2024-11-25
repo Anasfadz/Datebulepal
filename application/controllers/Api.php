@@ -10,6 +10,16 @@ class Api extends RestServerRestController {
     }
 
     // Handle GET requests
+
+    public function index_get() {
+
+        $data = 
+        ['data' =>
+            ['token' => 'HHGGGGDJDJDJIDJDHDH']
+        ];
+        $this->response($data, RestServerRestController::HTTP_OK);
+    }
+
     public function index_post() {
 
         $data = 
