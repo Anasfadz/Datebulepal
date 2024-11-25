@@ -61,3 +61,6 @@ $route['set_first_time'] = 'LoginController/set_first_time';
 $route['dashboard'] = 'DashboardController/index';
 
 $route['user_setting'] = 'DashboardController/user_setting';
+
+// API SECTION
+$route['api/login']['POST'] = 'api';
