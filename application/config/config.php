@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Datebulepal/';
+$config['base_url'] = 'http://anasfadzrin.com/Datebulepal/';
 
 /*
 |--------------------------------------------------------------------------
@@ -138,7 +138,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = './vendor/autoload.php';
+$config['composer_autoload'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -530,9 +530,3 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-
-$config['custom_headers'] = [
-    'Access-Control-Allow-Origin' => 'null', // Disallows all origins
-    'Access-Control-Allow-Methods' => 'GET, POST, OPTIONS', // Specify allowed methods
-    'Access-Control-Allow-Headers' => 'Content-Type, Authorization', // Restrict headers
-];
