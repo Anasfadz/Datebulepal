@@ -77,7 +77,8 @@ class Api extends RestServerRestController {
             ['data' => [
                 'status' => true,
                 'token' => 'anasloginqwerty',
-                'message' => 'Data received successfully'],
+            ],
+                'message' => 'Data received successfully',
                 'details' =>  compact('name', 'email'),
             ], 
             RestServerRestController::HTTP_OK);
