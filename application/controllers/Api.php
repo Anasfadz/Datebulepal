@@ -13,16 +13,16 @@ class Api extends RestServerRestController {
 
     // Handle GET requests
 
-    public function index_get() {
+    public function login_get() {
 
         $data = 
         ['data' =>
-            ['token' => 'HHGGGGDJDJDJIDJDHDH']
+            ['token' => 'anasloginqwerty']
         ];
         $this->response($data, RestServerRestController::HTTP_OK);
     }
 
-    public function index_post() {
+    public function login_post() {
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             $this->response([
@@ -83,5 +83,10 @@ class Api extends RestServerRestController {
             ], 
             RestServerRestController::HTTP_OK);
         return;
+    }
+
+    public function logout_post()
+    {
+        $this->response("token session terminated", RestServerRestController::HTTP_OK);
     }
 }

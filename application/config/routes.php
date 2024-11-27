@@ -63,5 +63,6 @@ $route['dashboard'] = 'DashboardController/index';
 $route['user_setting'] = 'DashboardController/user_setting';
 
 // API SECTION
-$route['api/login']['GET'] = 'api';
-$route['api/login']['POST'] = 'api';
+$route['api/login'] = 'api/login';
+$route['api/logout'] = 'api/logout';
+
