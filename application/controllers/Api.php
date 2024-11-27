@@ -73,7 +73,6 @@ class Api extends RestServerRestController {
         }
 
         // Respond with success
-
         $this->response(
             ['data' => [
                 'status' => true,
