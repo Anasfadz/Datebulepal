@@ -40,7 +40,7 @@
             background-color: #0056b3;
         }
     </style>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="../../assets/manifest.json">
 </head>
 <body>
     <div class="login-container">
